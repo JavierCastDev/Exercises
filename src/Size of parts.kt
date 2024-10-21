@@ -12,5 +12,28 @@ cantidad de componentes más grandes y la cantidad de componentes rechazados.*/
 
 fun parts() {
     //Code here
-    
+    val totalPiezas = readln().toInt()
+    val listaPiezas = mutableListOf<Int>()
+    repeat(totalPiezas) {
+        val pieza = readln().toInt()
+        if (pieza > 1 || pieza < -1) {
+            println("Ingrese un valor dentro del rango correcto")
+        } else {
+            listaPiezas.add(pieza)
+        }
+    }
+
+    var larger = 0
+    var smaller = 0
+    var perfect = 0
+
+    for (i in listaPiezas) {
+        when(i) {
+            1 -> larger++
+            -1 -> smaller++
+            0 -> perfect++
+        }
+    }
+
+    println("$perfect $larger $smaller")
 }
