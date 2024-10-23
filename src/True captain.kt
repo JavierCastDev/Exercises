@@ -24,9 +24,12 @@ data class Pirate(val name: String)
 
 fun main() {
     // fix the declaration below
-    val captain = Pirate("Hector Barbossa")
+    var captain = Pirate("Hector Barbossa")
     println(captain.name)
     // put your code here
 
+    val newCaptain = Pirate("Jack Sparrow")
+    captain = newCaptain
+    println(captain.name)
 
 }
